@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+30.times do |idx|
+  Feed.create(body: "#{idx} Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo #{idx}", title: "title #{idx}", place: "pas loin de #{idx}", price: Random.rand(2000), ref: "#{idx}_ref83_#{idx}", hours: Random.rand(100))
+end
