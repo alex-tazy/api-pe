@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_27_231329) do
+ActiveRecord::Schema.define(version: 2018_07_09_222106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 2018_06_27_231329) do
     t.integer "price"
     t.string "ref"
     t.integer "hours"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "feeds_tags", id: false, force: :cascade do |t|
+    t.bigint "feed_id", null: false
+    t.bigint "tag_id", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
