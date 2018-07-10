@@ -3,7 +3,7 @@ class FeedsController < ApplicationController
 
   # GET /feeds
   def index
-    feeds = Feed.filter(params.slice(:price, :by_tags))
+    feeds = Feed.filter(params.slice(:price, :by_tags, :by_hours))
 
     paginate json: feeds, per_page: 8
   end

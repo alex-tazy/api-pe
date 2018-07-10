@@ -3,6 +3,7 @@ class Feed < ApplicationRecord
 
   scope :price, -> (price) { where price: price }
   scope :by_tags, -> (tag_id) { joins(:tags).where(tags: { id: tag_id }) }
+  scope :by_hours, -> (time) { where "hours >= #{time}" }
 
   def self.filter(filter_params)
     results = self.where(nil)
